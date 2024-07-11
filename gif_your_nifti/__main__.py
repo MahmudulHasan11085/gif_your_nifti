@@ -52,13 +52,6 @@ def main():
     # Welcome message
     welcome_str = '{} {}'.format('gif_your_nifti', __version__)
     welcome_decor = '=' * len(welcome_str)
-    print('{}\n{}\n{}'.format(welcome_decor, welcome_str, welcome_decor))
-
-    print('Selections:')
-    print('  mode = {}'.format(cfg.mode))
-    print('  size = {}'.format(cfg.size))
-    print('  fps  = {}'.format(cfg.fps))
-    print('  frameskip  = {}'.format(cfg.frameskip))
 
     # Determine gif creation mode
     if cfg.mode in ['normal', 'pseudocolor', 'depth']:
@@ -79,8 +72,6 @@ def main():
                                args.filename[2], cfg.size, cfg.fps, cfg.frameskip)
     else:
         raise ValueError("Unrecognized mode.")
-
-    print('Finished.')
 
 
 if __name__ == "__main__":
